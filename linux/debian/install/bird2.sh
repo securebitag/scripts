@@ -13,4 +13,4 @@ apt update
 apt -y upgrade
 
 # Install Bird2
-apt install bird2
+apt -y install bird2
