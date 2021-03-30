@@ -74,7 +74,7 @@ cat << "EOF" > "${BASE}/etc/fstab"
 # that works even if disks are added and removed. See fstab(5).
 #
 # <file system>		<mount point>	<type>	<options>               <dump>  <pass>
-/dev/vda2		/boot		ext4	rw,nosuid,nodev		0	0
+/dev/sda2		/boot		ext4	rw,nosuid,nodev		0	0
 /dev/mapper/lvm-swap	none		swap	sw			0	1
 /dev/mapper/lvm-root	/		ext4	errors=remount-ro	0	1
 EOF
@@ -127,6 +127,3 @@ cp --no-clobber "${BASE}/etc/locale.gen" "${BASE}/etc/locale.gen.orig"
 sed 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' "${BASE}/etc/locale.gen" > "${BASE}/etc/locale.gen.temp"
 mv -f "${BASE}/etc/locale.gen.temp" "${BASE}/etc/locale.gen"
 chroot ${BASE} locale-gen
-
-# Set root password
-chroot "${BASE}" passwd
