@@ -1,3 +1,5 @@
+apt install -y lvm2
+
 # Disk partitioning
 parted --script /dev/sda \
 mklabel gpt \
