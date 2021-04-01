@@ -1,4 +1,4 @@
-apt install -y lvm2
+apt install -y lvm2 parted
 
 # Disk partitioning
 parted --script /dev/sda \
