@@ -50,9 +50,8 @@ mount /dev/sda2 "${BOOT}"
 debootstrap --arch amd64 buster ${BASE} http://ftp.debian.org/debian/
 
 # Mount important directories for chroot
-for DIR in /dev /proc /sys /run
-do
-    mount --bind "${DIR}" "${BASE}${DIR}"
+for DIR in /dev /proc /sys /run; do
+   mount --bind "${DIR}" "${BASE}${DIR}"
 done
 
 # Configure package sources
