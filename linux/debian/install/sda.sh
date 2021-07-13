@@ -28,16 +28,6 @@ mkswap /dev/mapper/lvm-swap
 swapon /dev/mapper/lvm-swap
 mkfs.ext4 -F -L root /dev/mapper/lvm-root
 
-# Reconfigure name resolution
-cat > /etc/resolv.conf <<EOF
-nameserver 2606:4700:4700::1111
-nameserver 2001:4860:4860::8888
-nameserver 2620:fe::fe
-nameserver 1.1.1.1
-nameserver 8.8.8.8
-nameserver 9.9.9.9
-EOF
-
 # Define and mount directories 
 BASE="/4b42"
 BOOT="${BASE}/boot"
