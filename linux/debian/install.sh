@@ -37,7 +37,7 @@ mkdir "${BOOT}"
 mount /dev/sda2 "${BOOT}"
 
 # Do Debian Buster base installation
-debootstrap --arch amd64 buster ${BASE} http://ftp.debian.org/debian/
+debootstrap --arch amd64 bullseye ${BASE} http://ftp.debian.org/debian/
 
 # Mount important directories for chroot
 for DIR in /dev /proc /sys /run; do
@@ -46,15 +46,15 @@ done
 
 # Configure package sources
 cat << EOF > "${BASE}/etc/apt/sources.list"
-deb http://ftp.debian.org/debian/ buster main
-deb-src http://ftp.debian.org/debian/ buster main
+deb http://ftp.debian.org/debian/ bullseye main
+deb-src http://ftp.debian.org/debian/ bullseye main
 
-deb http://security.debian.org/debian-security buster/updates main
-deb-src http://security.debian.org/debian-security buster/updates main
+deb http://deb.debian.org/debian-security/ bullseye-security main
+deb-src http://deb.debian.org/debian-security/ bullseye-security main
 
 # buster-updates, previously known as 'volatile'
-deb http://ftp.debian.org/debian/ buster-updates main
-deb-src http://ftp.debian.org/debian/ buster-updates main
+deb http://ftp.debian.org/debian/ bullseye-updates main
+deb-src http://ftp.debian.org/debian/ bullseye-updates main
 EOF
 
 # Link mounted filesytems to mtab
