@@ -52,7 +52,6 @@ deb-src http://ftp.debian.org/debian/ bullseye main
 deb http://deb.debian.org/debian-security/ bullseye-security main
 deb-src http://deb.debian.org/debian-security/ bullseye-security main
 
-# buster-updates, previously known as 'volatile'
 deb http://ftp.debian.org/debian/ bullseye-updates main
 deb-src http://ftp.debian.org/debian/ bullseye-updates main
 EOF
