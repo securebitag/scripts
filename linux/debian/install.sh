@@ -97,7 +97,7 @@ wget https://raw.githubusercontent.com/securebitag/scripts/main/linux/authorized
 chroot "${BASE}" apt update
 chroot "${BASE}" apt -y dist-upgrade
 chroot "${BASE}" apt -y install grub-pc linux-image-amd64 locales lvm2 ssh
-chroot "${BASE}" apt --no-install-recommends --no-install-suggests install -y python
+chroot "${BASE}" apt --no-install-recommends --no-install-suggests install -y python3
 chroot "${BASE}" grub-install /dev/sda
 
 sed 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"/g' -i "${BASE}/etc/default/grub"
