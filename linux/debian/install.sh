@@ -37,7 +37,7 @@ mkdir "${BOOT}"
 mount /dev/sda2 "${BOOT}"
 
 # Do Debian Buster base installation
-debootstrap --arch amd64 bookworm ${BASE} http://ftp.debian.org/debian/
+debootstrap --arch amd64 bookworm ${BASE} http://ftp.debian.org/debian/ /usr/share/debootstrap/scripts/bookworm
 
 # Mount important directories for chroot
 for DIR in /dev /proc /sys /run; do
